@@ -27,6 +27,22 @@ def checkCol(stock):
         if count == 0:
             l.append(num)
     return l
-l = checkCol(stock1)
 
+#check all Row
+#l have the row which is none nan
+def checkRow(stock):
+    l = []
+    for num in range(stock.shape[0]):
+        count = 0
+        for i in ll:
+            #print(num,i)
+            te = stock[i][int(num)]
+            if math.isnan(te):
+                count+=1
+        if count == 0:
+            l.append(num)
+    return l
+
+l = checkCol(stock)
+l = checkRow(stock)
 
